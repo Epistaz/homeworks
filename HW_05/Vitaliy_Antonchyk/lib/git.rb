@@ -1,0 +1,6 @@
+require_relative "git/core"
+require_relative "git/api"
+require_relative "git/commit"
+require_relative "git/pull_request"
+require_relative "git/repository"
+require_relative "git/errors"
