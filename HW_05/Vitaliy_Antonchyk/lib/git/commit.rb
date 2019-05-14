@@ -1,4 +1,5 @@
 module Git
+  # comment
   class Commit
     attr_reader :body, :title, :author
 

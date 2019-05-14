@@ -1,3 +1,4 @@
+# describes Notification
 class Notification
   attr_reader :attached, :read_status, :from,
               :to, :body

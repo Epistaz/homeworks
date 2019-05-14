@@ -1,5 +1,5 @@
-require "notifications"
-#describes Homework
+require 'notifications'
+# describes Homework
 class Homework
   attr_reader :title, :body, :author, :target_repo
 
@@ -13,7 +13,7 @@ class Homework
                                                     attached: self)
   end
 
-  def to_json
+  def to_json(*_args)
     { title: title, body: body, student: author }
   end
 end

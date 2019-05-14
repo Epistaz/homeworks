@@ -1,13 +1,15 @@
-require "notifications"
-require "homework"
-require "person"
+require 'notifications'
+require 'homework'
+require 'person'
 
 # describes Mentor
 class Mentor < Person
   include Notifications
 
   def create_homework(title:, body:, target_repo:)
-    Homework.new(title: title, body: body, author: self, target_repo: target_repo)
+    Homework.new(title: title, body: body,
+                 author: self,
+                 target_repo: target_repo)
   end
 
   def check_homeworks!(repo)

@@ -1,11 +1,12 @@
 module Git
+  # describes PullRequest
   class PullRequest
-    attr_reader :title, :author, :commits, :status #, :send?
+    attr_reader :title, :author # , :send?
 
     STATUSES = {
-      open: "Open",
-      merged: "Merged",
-      closed: "Closed",
+      open: 'Open',
+      merged: 'Merged',
+      closed: 'Closed'
     }.freeze
 
     def initialize(author:, title:)
@@ -27,13 +28,12 @@ module Git
     end
 
     def merge
-      #some code to add commits
+      # some code to add commits
       @status = :merged
     end
 
     def close
       @status = :closed
     end
-
   end
 end

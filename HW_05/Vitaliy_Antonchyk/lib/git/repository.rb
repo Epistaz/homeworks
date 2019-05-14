@@ -1,6 +1,7 @@
-require "notifications"
+require 'notifications'
 
 module Git
+  # describes Repository
   class Repository
     attr_reader :author
 
@@ -9,9 +10,7 @@ module Git
       @name = name
     end
 
-    def name
-      @name
-    end
+    attr_reader :name
 
     def commits
       @commits ||= []
@@ -22,12 +21,12 @@ module Git
     end
 
     def new_pull_reqests
-      pull_reqests.select { |plr| plr.status == "Open" }
+      pull_reqests.select { |plr| plr.status == 'Open' }
     end
 
     def add_pull_reqest(plrequest)
       pull_reqests << plrequest
-      Notifications::Notifier.new.notify!(to: self.author,
+      Notifications::Notifier.new.notify!(to: author,
                                           from: plrequest.author,
                                           body: plrequest.title,
                                           attached: plrequest)

@@ -1,4 +1,6 @@
+# describes Git
 module Git
+  # comment
   module API
     def repositories
       @repositories ||= []
@@ -18,6 +20,7 @@ module Git
   end
 end
 
+# comment
 class Notifier
   def notify!(from, to, content, attached_content)
     to.notifications << Notification.new(from, to, content, attached_content)

@@ -1,6 +1,6 @@
-require "notification"
-require "net/http"
-require "json"
+require 'notification'
+require 'net/http'
+require 'json'
 # describes Notifications
 module Notifications
   # describes Subscribtions
@@ -39,6 +39,7 @@ module Notifications
     end
   end
 
+  # describes Notifications
   module Notifications
     def notifications
       @notifications ||= []
@@ -66,9 +67,11 @@ module Notifications
     end
 
     def notify!(from:, to:, body:, attached: nil)
-      new_notif = Notification.new(from: from, to: to, body: body, attached: attached)
+      new_notif = Notification.new(from: from,
+                                   to: to, body: body,
+                                   attached: attached)
       to.notifications << new_notif
-      url = URI("https://www.example.com")
+      url = URI('https://www.example.com')
       json = attached.to_json || {}
       HttpNotifier.submit(url, json)
     end
