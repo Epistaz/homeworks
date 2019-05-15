@@ -3,14 +3,12 @@ require 'notifications'
 module Git
   # describes Repository
   class Repository
-    attr_reader :author
+    attr_reader :author, :name
 
     def initialize(name:, author:)
       @author = author
       @name = name
     end
-
-    attr_reader :name
 
     def commits
       @commits ||= []

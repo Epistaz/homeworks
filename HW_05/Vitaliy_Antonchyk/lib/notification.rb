@@ -17,10 +17,17 @@ class Notification
   end
 
   def to_s
-    "From: #{@from}
-      To: #{@to}
-      Body: #{@body}
-      Attached: #{@attached.class}#{@attached}
-      Read? #{@read_status}"
+    "From: #{from}," \
+    "To: #{to}, Read: #{read_status}," \
+    "Body: #{@body}," \
+    "Attached: #{@attached}"
+  end
+
+  def inspect
+    "#{self.class}:#{object_id}" \
+    "From: #{from.class}:#{from.try(name)}," \
+    "To: #{to.class}:#{to.try(name)}, Read: #{read_status}," \
+    "Body: #{@body}," \
+    "Attached: #{@attached.class}#{@attached}"
   end
 end

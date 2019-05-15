@@ -28,7 +28,6 @@ module Git
     end
 
     def merge
-      # some code to add commits
       @status = :merged
     end
 
