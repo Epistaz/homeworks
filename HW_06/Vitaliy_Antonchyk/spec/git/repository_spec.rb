@@ -1,3 +1,5 @@
+# rubocop:disable all
+
 describe Git::Repository do
   let(:author) { double(Object.new, notifications: []) }
 
@@ -36,3 +38,5 @@ describe Git::Repository do
     it { expect { subject.add_pull_reqest(pull_reqest) }.to change { author.notifications.count }.by(1) }
   end
 end
+
+# rubocop:enable all

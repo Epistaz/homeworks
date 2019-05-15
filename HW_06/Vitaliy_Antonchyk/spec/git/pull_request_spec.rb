@@ -1,3 +1,5 @@
+# rubocop:disable all
+
 describe Git::PullRequest do
   let(:params) do
     {
@@ -35,3 +37,4 @@ describe Git::PullRequest do
     it { expect { subject.add_commits(commits) }.to change { subject.commits }.to([commits]) }
   end
 end
+# rubocop:enable all
